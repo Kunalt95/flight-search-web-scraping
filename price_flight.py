@@ -35,6 +35,7 @@ depart_list = [e.getText().strip() for e in depart_times]
 arrival_list = [f.getText().strip() for f in arrival_times]
 
 
-test = [print(item, "\n") for item in zip(airlines_name_list, depart_list, arrival_list, flight_stops, price_list)]
+flight_details = [print(item, "\n") for item in zip(airlines_name_list, depart_list, arrival_list, flight_stops, price_list)]
+
 
 driver.quit()
