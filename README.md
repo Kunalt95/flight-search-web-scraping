@@ -1,3 +1,8 @@
-# Flight Search Web Scraping!
+# Web scraping flight prices
 
-![alt text](http://cybernetsolutions.net/images/underconstruction.jpg)
+# Technologies
+
+The programming language of choice here was Python (version 3).
+
+# Potential future work
+
