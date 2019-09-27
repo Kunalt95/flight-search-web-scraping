@@ -1,8 +1,8 @@
-# Web scraping flight prices
+## Web scraping flight prices
 
-# Technologies
+## Technologies
 
 The programming language of choice here was Python (version 3).
 
-# Potential future work
+## Potential future work
 
