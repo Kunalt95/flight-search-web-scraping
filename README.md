@@ -1,4 +1,4 @@
-## Web scraping flight prices
+## Web scraping - Cheapest Flight Price!
 
 
 ## Technologies
@@ -9,9 +9,4 @@
 - HTML and CSS
 
 ## Demo
-
-
-
-
-## Potential future work
 
