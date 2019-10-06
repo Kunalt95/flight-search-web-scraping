@@ -1,5 +1,8 @@
 ## Web scraping - Cheapest Flight Price
-There is 3 main parts to this project. 
+
+This started out with me just creating a python script to get cheap flight results using web scraping (something I was trying to learn). Then invovled into storing data and then finally exposing that data on a web application. 
+
+There are 3 main parts to this project. 
 
   **1. Python Script**: This ask users for 3 main inputs (from, to, date), then based on the input it generates Expedia flight search URL. Then using Selenium WebDriver I open that URL, from there I use BeautifulSoup to dig through the HTML code of the website to find necessary information, such as airline names, duration of flight, stops, timings, and price. After I do some data cleaning (getting rid of certain symbols, whitespace...etc.), which then allows me to loop through the returned flights to find the cheapest ones. 
   
@@ -22,7 +25,8 @@ There is 3 main parts to this project.
 
 ## Demo
 
-1. Runnign the python script: 
+1. Running the python script: 
 ![script](https://i.imgur.com/uzsKHj2.png)
- 
+
+2. Seeing the results being updated on the web application:
 ![website](https://i.imgur.com/6leCtje.png)
