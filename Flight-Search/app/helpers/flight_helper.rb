@@ -1,0 +1,2 @@
+module FlightHelper
+end

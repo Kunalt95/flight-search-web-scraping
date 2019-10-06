@@ -40,23 +40,24 @@ def search_flight(from_loc, to_loc, date):
     # Removing the euro symbol and commas so data can be converted to int from str
     num_price_list = [int(re.sub('[€,]', '', x)) for x in price_list]
 
+    from_loc_list = [from_loc] * len(num_price_list)
+    to_loc_list = [to_loc] * len(num_price_list)
+    date_list = [date] * len(num_price_list)
+
     # Zipping all list together has two benefits, it binds all the data together and type of zip is tuple which is ideal for sqlite
-    zipped_list = zip(airlines_name_list, depart_list, arrival_list, flight_durations, flight_stops, num_price_list)
+    zipped_list = zip(date_list, from_loc_list, to_loc_list, airlines_name_list, depart_list, arrival_list, flight_durations, flight_stops, num_price_list)
 
     # connecting to the sql database
-    conn = sqlite3.connect("flight_search.db")
+    conn = sqlite3.connect("/Users/kunaltyagi/Documents/Coding/ProjectWork/flight-search-web-scraping/Flight-Search/db/flight_search.db")
     c = conn.cursor()
-
-    # SQL schema used to create the table.
-    # c.execute("CREATE TABLE cheap_flights (airlines TEXT, depart_time TEXT, arrival_time TEXT, duration TEXT, stops TEXT, price INTEGER)")
 
     # Parsing the data
     for data in zipped_list:
 
         # if the particular flight price is equal to the lowest price returned then print and store the data
-        if data[5] == min(num_price_list):
+        if data[8] == min(num_price_list):
             print(data)
-            query = f"INSERT INTO cheap_flights VALUES (?, ?, ?, ?, ?, ?)"
+            query = f"INSERT INTO cheap_flights VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
             c.execute(query, data)
             conn.commit()
 

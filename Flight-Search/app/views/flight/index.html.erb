@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Spectral:extralight&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <style>
+            div#footer{
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                background-image: url("https://i.pinimg.com/originals/0d/9b/24/0d9b24189f42fb3f2563ef854b41ab0f.png");
+                font-family: 'Spectral', serif;
+                transition: 0.3s;
+                width: 100%;
+                text-align:center;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            div#left-card {
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                float: left;
+                transition: 0.3s;
+                width: 35%;
+                height: 300px;
+                background-color: #809fff;
+                border-radius: 5px;
+            }
+
+            div#right-card {
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+                width: 100%;
+                height: 550px;
+                background-color: #b3b3cc;
+                border-radius: 5px;
+            }
+            .container {
+                padding: 2px 16px;
+            }
+
+            .form-style-3{
+                max-width: 450px;
+                font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            }
+            .form-style-3 label{
+                display:block;
+                margin-bottom: 10px;
+            }
+            .form-style-3 label > span{
+                float: left;
+                width: 100px;
+                color: #F072A9;
+                font-weight: bold;
+                font-size: 13px;
+                text-shadow: 1px 1px 1px #fff;
+            }
+            .form-style-3 fieldset{
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                margin: 0px 0px 10px 0px;
+                border: 1px solid #FFD2D2;
+                padding: 20px;
+                background: #FFF4F4;
+                box-shadow: inset 0px 0px 15px #FFE5E5;
+                -moz-box-shadow: inset 0px 0px 15px #FFE5E5;
+                -webkit-box-shadow: inset 0px 0px 15px #FFE5E5;
+            }
+            .form-style-3 textarea{
+                width:250px;
+                height:100px;
+            }
+            .form-style-3 input[type=text],
+            .form-style-3 input[type=date],
+            .form-style-3 input[type=datetime],
+            .form-style-3 input[type=number],
+            .form-style-3 input[type=search],
+            .form-style-3 input[type=time],
+            .form-style-3 input[type=url],
+            .form-style-3 input[type=email],
+            .form-style-3 select,
+            .form-style-3 textarea{
+                border-radius: 3px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                border: 1px solid #FFC2DC;
+                outline: none;
+                color: #F072A9;
+                padding: 5px 8px 5px 8px;
+                box-shadow: inset 1px 1px 4px #FFD5E7;
+                -moz-box-shadow: inset 1px 1px 4px #FFD5E7;
+                -webkit-box-shadow: inset 1px 1px 4px #FFD5E7;
+                background: #FFEFF6;
+                width:50%;
+            }
+            .form-style-3  input[type=submit],
+            .form-style-3  input[type=button]{
+                background: #EB3B88;
+                border: 1px solid #C94A81;
+                padding: 5px 15px 5px 15px;
+                color: #FFCBE2;
+                box-shadow: inset -1px -1px 3px #FF62A7;
+                -moz-box-shadow: inset -1px -1px 3px #FF62A7;
+                -webkit-box-shadow: inset -1px -1px 3px #FF62A7;
+                border-radius: 3px;
+                border-radius: 3px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                font-weight: bold;
+            }
+            .required{
+                color:red;
+                font-weight:normal;
+            }
+        </style>
+    </head>
+    <body>
+
+    <div id="footer">
+      <div class="container">
+        <h2>Flight Search - Web Scraping</h2>
+      </div>
+    </div>
+
+    <div id="right-card">
+      <div class="container">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Airline</th>
+              <th>Departure Time</th>
+              <th>Arrival Time</th>
+              <th>Duration</th>
+              <th>Stops</th>
+              <th>Price</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @flights.each do |flight| %>
+              <tr>
+                <td><%= flight.date %></td>
+                <td><%= flight.from_city %></td>
+                <td><%= flight.to_city %></td>
+                <td><%= flight.airlines %></td>
+                <td><%= flight.depart_time %></td>
+                <td><%= flight.arrival_time %></td>
+                <td><%= flight.duration %></td>
+                <td><%= flight.stops %></td>
+                <td><%= flight.price %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    </body>
+</html>
